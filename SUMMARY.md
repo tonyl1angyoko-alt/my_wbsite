@@ -18,5 +18,6 @@
 
 ## CS61B by UCB
 
+* [Notes](cs61b-by-ucb/notes.md)
 * [Intro](cs61b-by-ucb/intro.md)
 * [Assignment](cs61b-by-ucb/assignment.md)
