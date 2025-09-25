@@ -217,4 +217,85 @@ C++值传递。为了修改本身的内容需要传进来地址。为了修改�
    * C语言：程序员必须手动、正确地调用 `createIntSet` 和 `destroyIntSet`。忘记调用 `destroyIntSet` 会导致内存泄漏；忘记调用 `createIntSet` 而直接使用指针会导致程序崩溃。
    * C++：对象的创建和销毁是自动管理的。只要你声明一个对象 `intSet set;`，构造函数就确保它被正确初始化。当对象离开作用域时，析构函数确保它被正确清理。这种将资源管理与对象生命周期绑定的技术称为 RAII (Resource Acquisition Is Initialization)，是C++最强大的特性之一，它极大地简化了资源管理并减少了错误。
 
+## 析构函数为什么通常为虚函数
+
+示例：
+
+```cpp
+ 1 #include <iostream>
+ 2 usingnamespace std;
+ 3
+ 4 class base1{
+ 5 int *basePnt;
+ 6 public:
+ 7 base1(){basePnt= new int{0};}
+ 8 ~base1(){ delete basePnt;}
+ 9 virtual void who(){
+ 10 cout<< "base1"<<endl;
+ 11 }
+ 12 };
+ 13 class derive1: public base1{
+ 14 int *derivePnt;
+ 15 public:
+ 16 derive1(){derivePnt= newint{0};}
+ 17 ~derive1(){ deletederivePnt;}
+ 18 void who(){
+ 19 cout<< "derive1"<<endl;
+ 20 }
+ 21 };
+ 23 class base2{
+ 24 int *basePnt;
+ 25 public:
+ 26 base2(){basePnt= newint{0};}
+ 27 virtual ~base2(){ delete basePnt;}
+ 28 };
+ 29 class derive2: public base2{
+ 30 int *derivePnt;
+ 31 public:
+ 32 derive2(){derivePnt= new int{0};}
+ 33 ~derive2(){ deletederivePnt;}
+ 34 };
+ 35
+ 36 intmain(){
+ 37 base1*pobj1= newderive1;
+ 38 base2*pobj2= newderive2;
+ 39 pobj1->who();
+ 40 pobj1->base1::who();
+ 41 delete pobj1;
+ 42 delete pobj2;
+ 43 return 0;
+ 44 }
+
+```
+
+### 总结：
+
+`37 base1 *pobj1 = new derive1;`
+
+* 这里发生了 多态。我们创建了一个 `derive1` 类的对象，但是用一个 基类 `base1` 的指针 `$pobj1$` 来指向它。
+* 在编译时，编译器只知道 `$pobj1$` 是一个 `base1` 类型的指针。但在运行时，程序知道它实际指向的是一个 `derive1` 对象
+
+`39 pobj1->who();`
+
+* 因为 `who()` 在 `base1` 中是 `virtual` 的，所以这里会发生 动态绑定。
+* 程序在运行时检查 `$pobj1$` 实际指向的对象类型，发现是 `derive1`，因此调用 `derive1::who()`。
+* 输出: `derive1`
+
+`40 pobj1->base1::who();`
+
+* 这里使用了作用域解析运算符 `::` 来强制调用 `base1` 类中定义的 `who()` 函数版本。
+* 这种调用方式是 静态绑定 的，它忽略了多态性。
+* 输出: `base1`
+
+`41 delete pobj1;` (核心问题点)
+
+* 我们通过一个 基类指针 (`$base1*$` ) 来删除一个 派生类对象。
+* 编译器检查 `$pobj1$` 的类型，是 `base1*`。然后它去看 `base1` 的析构函数 `~base1()` 是否为 `virtual`。
+* 它发现 `~base1()` 不是 `virtual` 的。
+* 因此，编译器执行 静态绑定。它只知道要调用指针类型对应的析构函数，即 `~base1()`。
+* 后果：
+  1. 只有 `~base1()` 被调用，`$basePnt$` 指向的内存被释放。
+  2. `~derive1()` 完全没有被调用！
+  3. `$derivePnt$` 指向的内存没有被释放，造成了 内存泄漏！
+
 [^1]: title
