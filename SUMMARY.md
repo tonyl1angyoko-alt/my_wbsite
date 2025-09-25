@@ -18,6 +18,11 @@
 
 ## CS61B by UCB
 
-* [Notes](cs61b-by-ucb/notes.md)
 * [Intro](cs61b-by-ucb/intro.md)
+* [Notes](cs61b-by-ucb/notes.md)
 * [Assignment](cs61b-by-ucb/assignment.md)
+
+## Others
+
+* [Data Structure](others/data-structure/README.md)
+  * [Lecture Intro](others/data-structure/lecture-intro.md)
