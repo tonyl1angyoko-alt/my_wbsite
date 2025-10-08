@@ -16,12 +16,6 @@
   * [LAPA](embodied-ai/vla/lapa.md)
   * [视觉预测现状研究](embodied-ai/vla/shi-jue-yu-ce-xian-zhuang-yan-jiu.md)
 
-## CS61B by UCB
-
-* [Intro](cs61b-by-ucb/intro.md)
-* [Notes](cs61b-by-ucb/notes.md)
-* [Assignment](cs61b-by-ucb/assignment.md)
-
 ## Others
 
 * [Data Structure](others/data-structure/README.md)
