@@ -13,6 +13,7 @@
 
 * [Intro](embodied-ai/intro.md)
 * [VLA](embodied-ai/vla/README.md)
+  * [Π0：论文学习](embodied-ai/vla/0-lun-wen-xue-xi.md)
   * [LAPA](embodied-ai/vla/lapa.md)
   * [视觉预测现状研究](embodied-ai/vla/shi-jue-yu-ce-xian-zhuang-yan-jiu.md)
 

@@ -10,7 +10,7 @@ description: 记录知识，分享心得。A journey of learning.
 
 ### About Me
 
-我是上海交通大学ME专业学生，有志于embodied AI的研究。自学了很多优质课程之后，我希望进行一个系统性的总结，并且作为督促自己不断学习的途径。
+我是上海交通大学的学生，有志于embodied AI的研究。自学了很多优质课程之后，我希望进行一个系统性的总结，并且作为督促自己不断学习的途径。
 
 ### some thoughts
 
