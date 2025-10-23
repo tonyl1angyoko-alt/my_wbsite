@@ -24,3 +24,4 @@
   * [Lecture Intro2---virtual](others/data-structure/lecture-intro2-virtual.md)
   * [Lecture Intro3---template](others/data-structure/lecture-intro3-template.md)
   * [Lecture Intro4---\*\&repr](others/data-structure/lecture-intro4-and-repr.md)
+  * [Lecture 02---linear table](others/data-structure/lecture-02-linear-table.md)
