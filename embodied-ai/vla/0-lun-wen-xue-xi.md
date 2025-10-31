@@ -16,7 +16,7 @@ description: 'π0: A Vision-Language-Action Flow Model for  General Robot Contro
    借鉴以往的分权重（也就是分模块），VLM+expert\
 
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 7. 他们并非简单地照搬 Transfusion 的混合训练模式，而是通过创建一个专门负责处理机器人本体状态和动作的“专家网络”（拥有独立的参数），对原有思想进行了优化，并用实验证明了这种“专业化分工”的设计能够带来实实在在的性能好处。
 8.  模型学习根据【状态，摄像头，语义】学习给出的动作A，但是

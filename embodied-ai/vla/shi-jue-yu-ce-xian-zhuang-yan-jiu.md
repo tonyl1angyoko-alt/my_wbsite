@@ -41,7 +41,7 @@
 
 ​​
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 #### 图 (b): VPTR-NAR (非自回归模型) <a href="#tu-bvptrnar-fei-zi-hui-gui-mo-xing" id="tu-bvptrnar-fei-zi-hui-gui-mo-xing"></a>
 
