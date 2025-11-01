@@ -20,6 +20,7 @@
 ## Others
 
 * [电路理论](others/dian-lu-li-lun/README.md)
+  * [OOP 运放](others/dian-lu-li-lun/oop-yun-fang.md)
   * [基础电路分析](others/dian-lu-li-lun/ji-chu-dian-lu-fen-xi.md)
 * [Data Structure](others/data-structure/README.md)
   * [Lecture Intro1---OOP](others/data-structure/lecture-intro1-oop.md)
