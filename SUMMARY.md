@@ -13,6 +13,7 @@
 
 * [Intro](embodied-ai/intro.md)
 * [VLA](embodied-ai/vla/README.md)
+  * [openVLA](embodied-ai/vla/openvla.md)
   * [Π0：论文学习](embodied-ai/vla/0-lun-wen-xue-xi.md)
   * [Π0：复盘](embodied-ai/vla/0-fu-pan.md)
   * [LAPA](embodied-ai/vla/lapa.md)
